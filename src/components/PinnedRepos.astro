@@ -1,0 +1,85 @@
+---
+import axios from "axios";
+import { Icon } from "astro-icon";
+
+type repo = {
+  name: string;
+  description: string;
+  url: string;
+  website: string;
+  stars: string;
+  forks: string;
+};
+
+const response = await axios.get(
+  "https://gh-pinned-repos.egoist.dev/?username=anirudtate"
+);
+const data = response.data.map((repo: any) => {
+  return {
+    name: repo.repo,
+    description: repo.description ?? "",
+    url: repo.link,
+    website: repo.website ?? "",
+    stars: repo.stars,
+    forks: repo.forks,
+  };
+}) as repo[];
+---
+
+<section class="flex flex-col w-full gap-6 mb-10 prose prose-a:no-underline">
+  <h2
+    class="dark:text-zinc-200 text-zinc-900 text-[2.5rem] font-extrabold leading-none m-0"
+    id="projects"
+  >
+    Top Projects
+  </h2>
+  <div
+    class="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-2 w-full gap-6"
+  >
+    {
+      data.map((repo) => (
+        <div class="bg-gradient-to-r from-zinc-500 to-stone-500 p-1 gap-4 rounded-lg shadow-lg dark:shadow-zinc-200/10 shadow-zinc-800/10 hover:shadow-xl hover:scale-[103%] dark:hover:shadow-zinc-200/10 hover:shadow-zinc-800/10 duration-300">
+          <div class="flex flex-col cursor-pointer justify-between h-full dark:bg-zinc-800 bg-zinc-200 p-4 rounded-lg ">
+            <div>
+              <h3 class="dark:text-zinc-200 text-zinc-800 m-0 mb-6 text-lg font-semibold w-full tracking-tight leading-none">
+                {repo.name}
+              </h3>
+              <p class="dark:text-zinc-300 text-zinc-700 m-0 mb-6 text-sm w-full tracking-tight">
+                {repo.description}
+              </p>
+            </div>
+            <div class="gap-6 flex">
+              {repo.url != null && (
+                <a href={`/project/${repo.name}`}>
+                  {" "}
+                  <div class="flex dark:text-zinc-400 text-zinc-600 gap-1 text-base items-center font-semibold hover:underline">
+                    <Icon pack="feather" name="book" size="15" />
+                    <p class="m-0">Read</p>
+                  </div>
+                </a>
+              )}
+              {repo.website != null && (
+                <a target="_blank" rel="noreferrer" href={repo.website}>
+                  {" "}
+                  <div class="flex dark:text-zinc-400 text-zinc-600 gap-1 text-base items-center font-semibold hover:underline">
+                    <Icon pack="feather" name="globe" size="15" />
+                    <p class="m-0">Live</p>
+                  </div>
+                </a>
+              )}
+            </div>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+  <a
+    href="/projects"
+    class="flex group gap-2 items-center duration-200 text-zinc-500 cursor-pointer no-underline dark:hover:text-zinc-400 hover:text-zinc-700"
+  >
+    View More{" "}
+    <span class="group-hover:translate-x-1 duration-200">
+      <Icon pack="feather" name="arrow-right" />
+    </span>
+  </a>
+</section>
