@@ -1,5 +1,4 @@
 ---
-import Footer from "../components/Footer.astro";
 import SideBar from "../components/SideBar.astro";
 
 export interface Props {
@@ -24,7 +23,6 @@ const { title } = Astro.props;
       <div class="w-10 sm:w-14 md:w-20 shrink-0"></div>
       <div class="h-full w-full">
         <slot />
-        <Footer />
       </div>
     </div>
   </body>

@@ -1,0 +1,1 @@
+import"./ThemeSwitcher.astro_astro_type_script_index_0_lang.c94fbd43.js";const n=()=>((new Date().getTime()-new Date("August 21, 2002").getTime())/1e3/60/60/24/365).toFixed(9),e=document.getElementById("age"),t=()=>{e&&(e.innerText=n().toString()),setTimeout(()=>{t()},10)};t();

@@ -1,5 +1,5 @@
 {
-  "name": "portastro",
+  "name": "portfolio",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
@@ -10,14 +10,17 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/mdx": "^0.19.0",
     "@astrojs/tailwind": "^3.1.1",
     "@astrojs/vercel": "^3.2.4",
     "astro": "^2.3.0",
     "astro-icon": "^0.8.0",
     "axios": "^1.3.5",
+    "marked": "^4.3.0",
     "tailwindcss": "^3.0.24"
   },
   "devDependencies": {
-    "@tailwindcss/typography": "^0.5.9"
+    "@tailwindcss/typography": "^0.5.9",
+    "@types/marked": "^4.0.8"
   }
 }
