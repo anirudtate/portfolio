@@ -24,8 +24,8 @@ const NavbarItems = [
     icon: "pie-chart",
   },
   {
-    name: "Work",
-    route: "/work",
+    name: "Experience",
+    route: "/experience",
     icon: "briefcase",
   },
   {
@@ -40,7 +40,18 @@ const NavbarItems = [
   },
 ];
 
-const route = Astro.url.pathname;
+const route = [
+  "/",
+  Astro.url.pathname
+    .substring(1)
+    .substring(
+      0,
+      Astro.url.pathname.substring(1).indexOf("/") == -1
+        ? 10
+        : Astro.url.pathname.substring(1).indexOf("/")
+    )
+    .replace("/", ""),
+].join("");
 ---
 
 <div

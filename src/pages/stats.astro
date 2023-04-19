@@ -2,9 +2,7 @@
 import { Icon } from "astro-icon";
 import Layout from "../layouts/Layout.astro";
 import axios from "axios";
-
 let responseCodeforces;
-
 try {
   responseCodeforces = await axios.get(
     "https://codeforces.com/api/user.info?handles=anirudtate"

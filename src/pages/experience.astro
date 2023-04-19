@@ -1,0 +1,24 @@
+---
+import FormatedMarkdown from "../layouts/FormatedMarkdown.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Work">
+  <div
+    class="w-full min-h-screen h-full p-8 flex flex-col items-center relative"
+  >
+    <section class="flex flex-col w-full justify-between prose gap-6 mb-12">
+      <div>
+        <h1 class="dark:text-zinc-200 text-zinc-900 leading-none mb-3">
+          Experience
+        </h1>
+        <FormatedMarkdown>
+          <p>
+            I am current a fresher searching for job opportunities. You can
+            contact me <a class="underline" href="/links">here</a>.
+          </p>
+        </FormatedMarkdown>
+      </div>
+    </section>
+  </div>
+</Layout>

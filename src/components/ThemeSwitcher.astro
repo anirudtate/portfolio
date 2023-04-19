@@ -2,10 +2,6 @@
 import { Icon } from "astro-icon";
 ---
 
-<!--
-  negative margin is sum of button width (8) and gap size of flex parent (6)
-  TODO don't hardcode these values
--->
 <button
   id="theme-switcher"
   type="button"
@@ -16,7 +12,7 @@ import { Icon } from "astro-icon";
     name="moon"
     id="icon-theme-light"
     size="35"
-    class="text-mono-100 rounded dark:bg-mono-800 bg-mono-700 dark:hover:bg-mono-700 hover:bg-mono-800 py-2 cursor-pointer hover:scale-110 duration-300 ease-in-out shadow hover:shadow-xl"
+    class="text-mono-100 rounded dark:bg-mono-800 bg-mono-700 dark:hover:bg-mono-700 hover:bg-mono-800 py-2 cursor-pointer hover:scale-110 duration-300 ease-in-out shadow hover:shadow-xl hidden"
   />
   <Icon
     pack="feather"
@@ -27,7 +23,7 @@ import { Icon } from "astro-icon";
   />
 </button>
 
-<script>
+<script is:inline>
   const themes = ["light", "dark"];
   const button = document.querySelector("#theme-switcher");
 
