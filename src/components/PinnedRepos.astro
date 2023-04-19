@@ -50,7 +50,7 @@ const data = response.data.map((repo: any) => {
             </div>
             <div class="gap-6 flex">
               {repo.url != null && (
-                <a href={`/project/${repo.name}`}>
+                <a href={`/projects/${repo.name}`}>
                   {" "}
                   <div class="flex dark:text-zinc-400 text-zinc-600 gap-1 text-base items-center font-semibold hover:underline">
                     <Icon pack="feather" name="book" size="15" />
