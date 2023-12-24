@@ -1,26 +1,29 @@
 {
-  "name": "portfolio",
-  "type": "module",
-  "version": "0.0.1",
+  "name": "steam",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
-    "@astrojs/mdx": "^0.19.0",
-    "@astrojs/tailwind": "^3.1.1",
-    "@astrojs/vercel": "^3.2.4",
-    "astro": "^2.3.0",
-    "astro-icon": "^0.8.0",
-    "axios": "^1.3.5",
-    "marked": "^4.3.0",
-    "tailwindcss": "^3.0.24"
+    "@types/node": "18.14.2",
+    "@types/react": "18.0.28",
+    "@types/react-dom": "18.0.11",
+    "animejs": "^3.2.1",
+    "eslint": "8.35.0",
+    "eslint-config-next": "13.2.1",
+    "framer-motion": "^10.0.1",
+    "next": "13.2.1",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-icons": "^4.7.1",
+    "sass": "^1.58.3",
+    "typescript": "4.9.5"
   },
   "devDependencies": {
-    "@tailwindcss/typography": "^0.5.9",
-    "@types/marked": "^4.0.8"
+    "@types/animejs": "^3.1.7"
   }
 }
