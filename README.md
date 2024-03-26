@@ -1,88 +1,36 @@
-# YO! Welcome to the "Steam" developer portfolio template
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-Steam is a starter template designed to help you land more interviews. Below we'll walk through exactly how you can customize this template to make it your own.
+## Getting Started
 
-Before we go too far, note that I've provided a video walkthrough of the entire project [HERE](https://youtu.be/hu-XLI3bFX8).
+First, run the development server:
 
-You can also find a live version of this project deployed at [https://steam-portfolio-demo.vercel.app/](https://steam-portfolio-demo.vercel.app/).
-
-## Let's get things running
-
-This template is built on top of [NextJS](https://nextjs.org/), a full stack development framework built on top of React.
-
-We won't take time here going over exactly how NextJS works on a deep level (to be fair, this project doesn't use Next at a deep level), but if you're interested in learning, their docs are [here](https://nextjs.org/docs/getting-started).
-
-At the root of your project, you'll see a `package.json` file defining our dependencies.
-
-Most of this is boilerplate, but I will call out the following three dependencies:
-
-- `animejs` -> A javascript animation library, used for the grid animation inside of DotGrid.tsx
-- `framer-motion` -> A react based animation library, used in a hand full of places (anywhere you see `<motion.el />` style components)
-- `sass` -> All styling uses plain CSS and sass modules for this project
-
-Now that's out of the way, you can get your project running by first installing dependencies.
-
-From your terminal, run:
-
-```
-npm install
-# or
-yarn install
-```
-
-This will take a minute or two, but once that's done, you should be able to run the following command:
-
-```
+```bash
 npm run dev
 # or
 yarn dev
+# or
+pnpm dev
+# or
+bun dev
 ```
 
-This will start your project on `localhost:3000`
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-## The file structure
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-Because this is a NextJS project, we follow the standard NextJS pattern for organizing this project.
+This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-Inside of the `pages/` directly you'll find 3 files:
+## Learn More
 
-- `_app.tsx` -> A file which wraps around every page in our app. Here we import the Poppins font and include it in our page. You can change to use whatever font you'd like here ([docs](https://nextjs.org/docs/basic-features/font-optimization)).
-- `_document.tsx` -> Essentially the NextJS version of your base "HTML document". Nothing fancy here.
-- `_index.tsx` -> This represents our home route. We include 1 single component here called `<Home />`. Click into this component to begin exploring.
+To learn more about Next.js, take a look at the following resources:
 
-To add MORE routes to your project, see [this doc](https://nextjs.org/docs/basic-features/pages).
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-Inside of the `styles/` directly you'll find find a global CSS file. This just includes a basic reset, as well as a couple of classes we use throughout the project.
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-Inside of the `components/` directory you'll find all of the good stuff. The `components/home/` directory houses the majority of what you'll like want to edit
+## Deploy on Vercel
 
-## Styling
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Global styling (colors mainly) are defined using CSS variables in the `styles/globals.css` file.
-
-```
-  --background: rgb(17, 17, 17);
-  --bg-opaque: rgb(17, 17, 17, 0.25);
-  --background-light: rgb(35, 35, 35);
-  --background-dark: rgb(8, 8, 8);
-
-  --text: rgb(235, 236, 243);
-  --brand: rgb(10, 255, 157);
-
-  --text-xs: 1.6rem;
-  --text-sm: 1.8rem;
-  --text-md: 2.2rem;
-  --text-lg: 3.6rem;
-  --text-xl: 5.6rem;
-  --text-2xl: 9.6rem;
-```
-
-The first six variables are the colors for the app. The last six are font sizes. Play around with these a bit to start making it your own.
-
-## More info
-
-That's the basics! If you're comfortable digging in yourself, then you should be set.
-
-Want a deeper walkthrough??
-
-[WATCH THE TUTORIAL VIDEO](https://youtu.be/hu-XLI3bFX8)
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
