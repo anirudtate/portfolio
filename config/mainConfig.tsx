@@ -30,6 +30,13 @@ export const mainConfig = {
       icon: Twitter,
     },
   ],
-  description:
-    "FRONT-END asdfjasdfk askdjfkasdjf askdjfaks dfkajsdf asdkfj asdkfjasd",
+  date_of_birth: "August 21, 2002",
+  description: (
+    <>
+      <b>Experienced Front-end Web Developer</b> skilled in <b>React</b> with a
+      keen interest in full-stack development, proficient in problem-solving
+      through competitive programming, and dedicated to building robust web
+      applications
+    </>
+  ),
 };
