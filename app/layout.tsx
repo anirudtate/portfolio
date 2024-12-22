@@ -1,17 +1,24 @@
 import type { Metadata } from "next";
-import { JetBrains_Mono, Outfit } from "next/font/google";
+import { DM_Mono, DM_Sans, DM_Serif_Text } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Header } from "@/components/header";
 
-const fontSans = Outfit({
+const fontSans = DM_Sans({
   variable: "--font-sans",
   subsets: ["latin"],
 });
 
-const fontMono = JetBrains_Mono({
+const fontSerif = DM_Serif_Text({
+  variable: "--font-serif",
+  weight: "400",
+  subsets: ["latin"],
+});
+
+const fontMono = DM_Mono({
   variable: "--font-mono",
+  weight: "400",
   subsets: ["latin"],
 });
 
@@ -29,9 +36,10 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body
         className={cn(
-          `font-sans antialiased`,
+          `font-sans antialiased text-md`,
           fontSans.variable,
-          fontMono.variable,
+          fontSerif.variable,
+          fontMono.variable
         )}
       >
         <ThemeProvider

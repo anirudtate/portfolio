@@ -14,10 +14,13 @@ export default {
       center: true,
       padding: "2rem",
       screens: {
-        "2xl": "1000px",
+        "2xl": "1250px",
       },
     },
     extend: {
+      fontSize: {
+        md: ["17px", "26px"],
+      },
       fontFamily: {
         sans: ["var(--font-sans)", ...defaultTheme.fontFamily.sans],
         serif: ["var(--font-serif)", ...defaultTheme.fontFamily.serif],

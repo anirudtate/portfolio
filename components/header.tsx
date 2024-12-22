@@ -1,10 +1,7 @@
-"use client";
-
-import { cn } from "@/lib/utils";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { Ref, useEffect, useRef, useState } from "react";
-import { motion } from "motion/react";
+import { LinkAnimation } from "./link-animation";
+import { Button } from "./ui/button";
+import { AppearFromAbove, AppearFromBelow } from "./appear-animations";
 
 const navElements = [
   {
@@ -30,50 +27,33 @@ const navElements = [
 ];
 
 export function Header() {
-  const pathname = usePathname();
-  const refs = useRef<(HTMLAnchorElement | null)[]>([]);
-  const [underlineWidth, setUnderlineWidth] = useState(0);
-  const [underlineOffset, setUnderlineOffset] = useState(0);
-
-  useEffect(() => {
-    if (underlineWidth === 0) {
-      const index = navElements.findIndex((x) => pathname === x.link);
-      const ref = refs.current[index];
-      if (ref) {
-        setUnderlineWidth(ref?.offsetWidth);
-        setUnderlineOffset(ref?.offsetLeft);
-      }
-    }
-  }, [pathname, underlineWidth]);
-
   return (
-    <div className="container flex justify-between px-2 py-6">
-      <div>Anirud Tate</div>
-      <div className="relative flex">
-        {navElements.map((navElement, index) => (
-          <Link
-            ref={(ref) => {
-              refs.current[index] = ref;
-            }}
-            className="px-2"
-            onMouseOver={(e) => {
-              setUnderlineWidth(e.currentTarget.offsetWidth);
-              setUnderlineOffset(e.currentTarget.offsetLeft);
-            }}
-            onMouseLeave={() => {
-              setUnderlineWidth(0);
-              setUnderlineOffset(0);
-            }}
-            href={navElement.link}
-            key={index}
-          >
-            {navElement.name}
+    <div className="container flex justify-between py-6 items-center">
+      <AppearFromAbove>
+        <div className="text-2xl font-serif">
+          <Link href="/">
+            <LinkAnimation height="32px">Anirud Tate</LinkAnimation>
           </Link>
+        </div>
+      </AppearFromAbove>
+      <div className="relative flex gap-6 items-center">
+        {navElements.map((navElement, index) => (
+          <AppearFromBelow key={index} delay={0.5 + index * 0.2} duration={0.4}>
+            <Link href={navElement.link}>
+              <LinkAnimation height="26px">{navElement.name}</LinkAnimation>
+            </Link>
+          </AppearFromBelow>
         ))}
-        <motion.div
-          className="absolute bg-foreground h-[1px] top-7"
-          animate={{ left: underlineOffset + 2, width: underlineWidth - 3 }}
-        />
+        <AppearFromAbove>
+          <Button className="text-md rounded-full" asChild>
+            <Link
+              href="https://docs.google.com/viewer?url=https://docs.google.com/document/d/1znGt5Do-9yDSvCsGDALhy2r9wKSKyWtAu2uQgHImFXk/export?format=pdf"
+              target="_blank"
+            >
+              Resume
+            </Link>
+          </Button>
+        </AppearFromAbove>
       </div>
     </div>
   );
