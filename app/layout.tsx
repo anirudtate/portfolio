@@ -4,6 +4,7 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Header } from "@/components/header";
+import { aboutConfig } from "@/config/aboutConfig";
 
 const fontSans = DM_Sans({
   variable: "--font-sans",
@@ -23,8 +24,8 @@ const fontMono = DM_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Anirud Tate",
-  description: "My Portfolio",
+  title: aboutConfig.name,
+  description: aboutConfig.description,
 };
 
 export default function RootLayout({
@@ -44,12 +45,12 @@ export default function RootLayout({
       >
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
+          defaultTheme="dark"
           enableSystem
           disableTransitionOnChange
         >
           <Header />
-          <div className="container">{children}</div>
+          {children}
         </ThemeProvider>
       </body>
     </html>

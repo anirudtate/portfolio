@@ -6,11 +6,14 @@ import { useState } from "react";
 export function LinkAnimation({
   children,
   height = "27px",
+  parentHovered = false,
 }: {
   children: React.ReactNode;
   height?: string;
+  parentHovered?: boolean;
 }) {
-  const [hovered, setHovered] = useState(false);
+  const [hoverted, setHovered] = useState(false);
+  const hovertedState = parentHovered || hoverted;
   return (
     <motion.div
       className="overflow-y-clip"
@@ -20,7 +23,7 @@ export function LinkAnimation({
     >
       <motion.div
         animate={{
-          y: hovered ? `-${height}` : 0,
+          y: hovertedState ? `-${height}` : 0,
           transition: {
             duration: 0.2,
           },
@@ -31,7 +34,7 @@ export function LinkAnimation({
       <motion.div
         className="text-muted-foreground"
         animate={{
-          y: hovered ? `-${height}` : 0,
+          y: hovertedState ? `-${height}` : 0,
           transition: {
             duration: 0.2,
           },
