@@ -13,7 +13,8 @@ export function AppearFromAbove({
   return (
     <motion.div
       initial={{ y: -30, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
+      viewport={{ once: true }}
+      whileInView={{ y: 0, opacity: 1 }}
       transition={{ duration: duration, delay: delay }}
     >
       {children}
@@ -33,7 +34,8 @@ export function AppearFromBelow({
   return (
     <motion.div
       initial={{ y: 30, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
+      viewport={{ once: true }}
+      whileInView={{ y: 0, opacity: 1 }}
       transition={{ duration: duration, delay: delay }}
     >
       {children}

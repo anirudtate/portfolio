@@ -4,6 +4,7 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Header } from "@/components/header";
+import { Footer } from "@/components/footer";
 import { aboutConfig } from "@/config/aboutConfig";
 
 const fontSans = DM_Sans({
@@ -37,7 +38,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body
         className={cn(
-          `font-sans antialiased text-md`,
+          `font-sans antialiased text-md min-h-screen flex flex-col`,
           fontSans.variable,
           fontSerif.variable,
           fontMono.variable
@@ -50,7 +51,8 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Header />
-          {children}
+          <main className="flex-1">{children}</main>
+          <Footer />
         </ThemeProvider>
       </body>
     </html>
