@@ -1,32 +1,20 @@
 import type { Metadata } from "next";
-import { DM_Mono, DM_Sans, DM_Serif_Text } from "next/font/google";
+import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { cn } from "@/lib/utils";
-import { ThemeProvider } from "@/components/theme-provider";
-import { Header } from "@/components/header";
-import { Footer } from "@/components/footer";
-import { aboutConfig } from "@/config/aboutConfig";
 
-const fontSans = DM_Sans({
-  variable: "--font-sans",
+const geistSans = Geist({
+  variable: "--font-geist-sans",
   subsets: ["latin"],
 });
 
-const fontSerif = DM_Serif_Text({
-  variable: "--font-serif",
-  weight: "400",
-  subsets: ["latin"],
-});
-
-const fontMono = DM_Mono({
-  variable: "--font-mono",
-  weight: "400",
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
   subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
-  title: aboutConfig.name,
-  description: aboutConfig.description,
+  title: "Anirud Tate",
+  description: "Full stack developer portfolio",
 };
 
 export default function RootLayout({
@@ -35,25 +23,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en">
       <body
-        className={cn(
-          `font-sans antialiased text-md min-h-screen flex flex-col`,
-          fontSans.variable,
-          fontSerif.variable,
-          fontMono.variable
-        )}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <Header />
-          <main className="flex-1">{children}</main>
-          <Footer />
-        </ThemeProvider>
+        {children}
       </body>
     </html>
   );
