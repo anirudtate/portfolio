@@ -1,7 +1,6 @@
-import { BlogSection } from "@/components/blog-section";
+// import { BlogSection } from "@/components/blog-section";
 import { Header } from "@/components/header";
 import { ProjectSection } from "@/components/project-section";
-import { WorkSection } from "@/components/work-section";
 import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 import { ReactNode } from "react";
@@ -10,17 +9,14 @@ export default function Home() {
   return (
     <>
       <Header />
-      <Section title="Work">
-        <WorkSection />
-      </Section>
       <Section title="Projects">
         <ProjectSection limit={2} />
         <ViewAllLink viewAllHref="projects" viewAllText="All Projects" />
       </Section>
-      <Section title="Blog">
+      {/* <Section title="Blog">
         <BlogSection limit={4} />
         <ViewAllLink viewAllHref="blogs" viewAllText="All Blogs" />
-      </Section>
+      </Section> */}
     </>
   );
 }
